@@ -1,0 +1,154 @@
+\documentclass[twoside,11pt]{Latex/Classes/PhDthesisPSnPDF}
+\include{Latex/Macros/MacroFile1}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{subcaption}
+
+
+\usepackage{color}\usepackage{graphicx,xcolor}
+\usepackage[margin=3.5cm]{geometry}
+\setcitestyle{square}
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks, % set true if you want colored links
+    citecolor=black,
+    filecolor=black,
+    linkcolor=blue, % choose some color if you want links to stand out
+    urlcolor=black
+}
+
+\usepackage[figurename=Figura]{caption}
+\usepackage[tablename=Tabla]{caption}
+
+
+%: ----------------------------------------------------------------------
+%:                      Título, nombre, logo...
+% ----------------------------------------------------------------------
+%Clasificador mediante imágenes de cáncer de piel
+\title{%
+  CLASIFICADOR \\ MEDIANTE IMÁGENES DE \\ CÁNCER DE PIEL \\
+  \large
+  \bigskip 
+  %FACULTAD DE INGENIERÍA INFORMÁTICA
+  Facultad de Ingeniería Informática \\
+  Departamento de Informática y Sistemas}
+
+\ifpdf
+  \author{\href{prashantjeswani8@gmail.com}{Prashant Jeswani Tejwani}}
+  \collegeordept{Bajo la dirección del doctor \\
+                José María Quinteiro González}
+                
+  \university{\href{https://www.ulpgc.es/}{Universidad de Las Palmas de Gran Canaria}}
+
+  % The crest is a graphics file of the logo of your research institution.
+  % Place it in ./0_frontmatter/figures and specify the width
+  
+  \crest{\includegraphics[width=14cm]{0_frontmatter/figures/LogoEII.jpg}}
+\fi
+
+\renewcommand{\submittedtext}{Memoria para optar al}
+\degree{Grado de Ingeniería Informática}
+\degreedate{Las Palmas de Gran Canaria, 2021}
+
+% Turn of those nasty overfull and underfull hboxes
+\hbadness=10000
+\hfuzz=50pt
+
+\begin{document}
+% Sets line spacing
+\renewcommand\baselinestretch{1.2}
+\baselineskip=18pt plus1pt
+
+
+%: --------------------------------------------------------------
+%:                  Frontpage, abstract, acknowledgement
+% --------------------------------------------------------------
+\maketitle  % title page
+\include{0_frontmatter/TFT04} % TFT04
+\include{0_frontmatter/abstract} % abstract
+
+\frontmatter
+%\include{0_frontmatter/acknowledgement} % acknowledgement
+
+
+%: --------------------------------------------------------------
+%:                  Contents, list of figures/tables
+% --------------------------------------------------------------
+\setcounter{secnumdepth}{3} % organisational level that receives a numbers
+\setcounter{tocdepth}{3} % print table of contents for level 3
+\renewcommand{\contentsname}{Índice de contenido}
+\renewcommand{\listfigurename}{Índice de figuras}
+\renewcommand{\listtablename}{Índice de tablas}
+\tableofcontents 
+\listoffigures
+\listoftables  
+
+
+%: --------------------------------------------------------------
+%                           MAIN DOCUMENT
+% --------------------------------------------------------------
+\mainmatter
+\renewcommand{\chaptername}{} % uncomment to print only "1" not "Chapter 1"
+
+\include{1_introduction/introduction}
+\include{2/diagnosis}
+\include{3/dataset}
+\include{4/result_analysis}
+%\include{5/}
+%\include{6/subdoc}
+%\include{7/subdoc}
+\include{7/conclusions}
+
+
+% --------------------------------------------------------------
+%:       Back matter: appendices, references, bibliography
+% --------------------------------------------------------------
+%\begin{multicols}{2} % \begin{multicols}{ # columns}[ header text][ space]
+%\begin{tiny} % tiny(5) < scriptsize(7) < footnotesize(8) < small (9)
+\bibliographystyle{Latex/Classes/PhDbiblio-url2} % Title is link if provided
+\renewcommand{\bibname}{Referencias}
+\bibliography{8_backmatter/references} % adjust this to fit your BibTex file
+
+%\end{tiny}
+%\end{multicols}
+
+\end{document}
+
+% --------------------------------------------------------------
+% The section above defines how references are listed and formatted
+% The default above is 2 columns, small font, complete author names.
+% Entries are also linked back to the page number in the text and to external URL if provided in the BibTex file.
+
+% PhDbiblio-url2 = names small caps, title bold & hyperlinked, link to page
+
+% --------------------------------------------------------------
+% Various bibliography styles exit. Replace above style as desired.
+
+% in-text refs: (1) (1; 2)
+% ref list: alphabetical; author(s) in small caps; initials last name; page(s)
+%\bibliographystyle{Latex/Classes/PhDbiblio-case} % title forced lower case
+%\bibliographystyle{Latex/Classes/PhDbiblio-bold} % title as in bibtex but bold
+%\bibliographystyle{Latex/Classes/PhDbiblio-url} % bold + www link if provided
+
+%\bibliographystyle{Latex/Classes/jmb} % calls style file jmb.bst
+% in-text refs: author (year) without brackets
+% ref list: alphabetical; author(s) in normal font; last name, initials; page(s)
+
+%\bibliographystyle{plainnat} % calls style file plainnat.bst
+% in-text refs: author (year) without brackets
+% (this works with package natbib)
+
+
+% --------------------------------------------------------------
+% according to Dresden med fac summary has to be at the end
+%\include{0_frontmatter/abstract}
+%: Declaration of originality
+%\include{9_backmatter/declaration}

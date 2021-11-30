@@ -1,4 +1,4 @@
-# Melanoma-Classifier
+# Melanoma Classifier
 
 A skin cancer diagnostic classifier is introduced in this work. Comparisons are made with several models, showing ways to solve
 imabalance data in clinical data. In addition, the importance of calibrating the classification models is implemented and explained. A 

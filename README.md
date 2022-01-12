@@ -6,4 +6,6 @@ Bayesian neural networks are implemented that allows the incorporation of other 
 Finally, it is discussed that a diagnosis with the help of CNN with Bayesian NN can be beneficial and more accurate,
 improving the diagnostic accuracy of doctors in the detection of melanoma.
 
-Power point presentation of thesis: [ppt](TFT_Prashant.pptx)
+Thesis (in Spanish): [Document](Memoria_del_TFT.pdf)
+
+Power point presentation of thesis: [Presentation](TFT_Prashant.pptx)
